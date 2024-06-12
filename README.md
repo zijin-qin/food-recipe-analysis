@@ -39,7 +39,7 @@ The first 5 rows of our DataFrame after cleaning:
 
 Distribution of Saturated Fat of Top 20 Recipes:
 <iframe
-  src="C:/Users/zijin/dsc80-2024-sp/food-recipe-analysis/top_fig.html"
+  src="/Users/zijin/dsc80-2024-sp/food-recipe-analysis/top_fig.html"
   width="800"
   height="600"
   frameborder="0"
@@ -61,7 +61,7 @@ The histogram shows the distribution of saturated fat content (in percent daily 
 
 Distribution of Saturated Fat vs. Average Rating of All Recipes:
 <iframe
-  src="C:/Users/zijin/dsc80-2024-sp/food-recipe-analysis/scatter_fig.html"
+  src="/Users/zijin/dsc80-2024-sp/food-recipe-analysis/scatter_fig.html"
   width="800"
   height="600"
   frameborder="0"
@@ -89,7 +89,7 @@ Our p-value was greater than 0.05, which meant we failed to reject the null hypo
 
 This graph shows the relationship between missingness of the `review` column and the `avg_rating` column:
 <iframe
-  src="C:/Users/zijin/dsc80-2024-sp/food-recipe-analysis/fig_bar.html"
+  src="/Users/zijin/dsc80-2024-sp/food-recipe-analysis/fig_bar.html"
   width="800"
   height="600"
   frameborder="0"
