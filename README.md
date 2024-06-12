@@ -81,9 +81,9 @@ There are 3 columns with missing values: `name`, `description`, and `review`. Of
 
 We ran a permutation test under the following hypotheses:
 
-**Null Hypothesis:** Average ratings of null reviews and non-null reviews come from the same distribution
-**Alternative Hypothesis:** Average ratings of non-null reviews are higher than average ratings of null reviews
-**Test Statistic:** Difference in group means
+- **Null Hypothesis:** Average ratings of null reviews and non-null reviews come from the same distribution
+- **Alternative Hypothesis:** Average ratings of non-null reviews are higher than average ratings of null reviews
+- **Test Statistic:** Difference in group means
 
 Our p-value was greater than 0.05, which meant we failed to reject the null hypothesis. This means the missingness of the `review` column might depend on the values in the `avg_rating` column. The missingness of recipe reviews might not depend on the average rating of the recipe.
 
@@ -99,11 +99,11 @@ The difference between the average rating of those missing and those that have r
 
 ## Hypothesis Testing
 
-**Null Hypothesis:** There is no difference between the saturated fat content of the top 20 rated recipes and bottom 20 rated recipes. 
-**Alternative Hypothesis:** There IS a difference between the saturated fat content of the top and bottom 20 recipes. 
+- **Null Hypothesis:** There is no difference between the saturated fat content of the top 20 rated recipes and bottom 20 rated recipes. 
+- **Alternative Hypothesis:** There IS a difference between the saturated fat content of the top and bottom 20 recipes. 
 
-**Test Statistic:** Difference in means of saturated fat content of both groups.
-**Significance Level:** 0.05 (If p-value < 0.05, we reject the null hypothesis. Otherwise, we fail to reject it.)
+- **Test Statistic:** Difference in means of saturated fat content of both groups.
+- **Significance Level:** 0.05 (If p-value < 0.05, we reject the null hypothesis. Otherwise, we fail to reject it.)
 
 We ran a permutation test based on the above. These are good choices because we are trying to determine whether the distribution of the two samples, the saturated fat content of the best-rated 20 recipes and worst-rated 20 recipes, are draws from the same population. Since we want to determine that, we want to use difference in means of saturated fat content of both groups as the test statistic because the saturated fat content is a numeric variable. 
 
