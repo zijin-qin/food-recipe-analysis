@@ -34,3 +34,77 @@ The first 5 rows of our DataFrame after cleaning:
 | 412 broccoli casserole               |      306168 |        40 |            50969 | 2008-05-30  | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        |         6 | ['preheat oven to 350 degrees', 'spray a 2 quart baking dish with cooking spray , set aside', 'in a large bowl mix together broccoli , soup , one cup of cheese , garlic powder , pepper , salt , milk , 1 cup of french onions , and soy sauce', 'pour into baking dish , sprinkle remaining cheese over top', 'bake for 25 minutes or until cheese is lightly browned', 'sprinkle with rest of french fried onions and bake until onions are browned and cheese is bubbly , about 10 more minutes']                                                                                                                                                                                                                                                                                                                              | since there are already 411 recipes for broccoli casserole posted to "zaar" ,i decided to call this one  #412 broccoli casserole.i don't think there are any like this one in the database. i based this one on the famous "green bean casserole" from campbell's soup. but i think mine is better since i don't like cream of mushroom soup.submitted to "zaar" on may 28th,2008 | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions']          |               9 |      1.19628e+06 |      306168 | 2009-04-13 | I made this for my son's first birthday party this weekend. Our guests INHALED it! Everyone kept saying how delicious it was. I was I could have gotten to try it.                                                                                                                                                                               |            5 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |
 | 412 broccoli casserole               |      306168 |        40 |            50969 | 2008-05-30  | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        |         6 | ['preheat oven to 350 degrees', 'spray a 2 quart baking dish with cooking spray , set aside', 'in a large bowl mix together broccoli , soup , one cup of cheese , garlic powder , pepper , salt , milk , 1 cup of french onions , and soy sauce', 'pour into baking dish , sprinkle remaining cheese over top', 'bake for 25 minutes or until cheese is lightly browned', 'sprinkle with rest of french fried onions and bake until onions are browned and cheese is bubbly , about 10 more minutes']                                                                                                                                                                                                                                                                                                                              | since there are already 411 recipes for broccoli casserole posted to "zaar" ,i decided to call this one  #412 broccoli casserole.i don't think there are any like this one in the database. i based this one on the famous "green bean casserole" from campbell's soup. but i think mine is better since i don't like cream of mushroom soup.submitted to "zaar" on may 28th,2008 | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions']          |               9 | 768828           |      306168 | 2013-08-02 | Loved this.  Be sure to completely thaw the broccoli.  I didn&#039;t and it didn&#039;t get done in time specified.  Just cooked it a little longer though and it was perfect.  Thanks Chef.                                                                                                                                                     |            5 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |
 
+
+### Univariate Analysis
+
+Distribution of Saturated Fat of Top 20 Recipes:
+<iframe
+  src="C:/Users/zijin/dsc80-2024-sp/food-recipe-analysis/top_fig.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+This histogram shows the distribution of saturated fat content (in percent daily value) of the top 20 recipes. Most have between 20-60% daily value. 
+
+Distribution of Saturated Fat of Worst 20 Recipes:
+<iframe
+  src="C:/Users/zijin/dsc80-2024-sp/food-recipe-analysis/last_fig.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+The histogram shows the distribution of saturated fat content (in percent daily value) of the worst 20 recipes. While the graph only shows up to 120% daily value, there are recipes with saturated fat content above this threshold, unlike the top 20 recipes. 
+
+### Bivariate Analysis
+
+Distribution of Saturated Fat vs. Average Rating of All Recipes:
+<iframe
+  src="C:/Users/zijin/dsc80-2024-sp/food-recipe-analysis/scatter_fig.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+This scatter plot shows the distribution of saturated fat content (in percent daily value) of all recipes in our dataset. The x-axis shows the saturated fat content, while the y-axis shows the average rating of each recipe. Most recipes have 0-200% daily value of saturated fat, and there is a higher proportion of recipes with 3-5 star ratings. 
+
+### Interesting Aggregates
+
+## Assessment of Missingness
+
+### NMAR Analysis
+
+There are 3 columns with missing values: `name`, `description`, and `review`. Of these 3 columns, the column `description` is not missing at random (NMAR). The missingness of the `description` column depends on the `tags` column, which contains the Food.com tags for the recipe. Recipes of well-known foods with similar tags may be missing descriptions because many people know what food the recipe is about.
+
+### Missingness Dependency
+
+We ran a permutation test under the following hypotheses:
+
+**Null Hypothesis:** Average ratings of null reviews and non-null reviews come from the same distribution
+**Alternative Hypothesis:** Average ratings of non-null reviews are higher than average ratings of null reviews
+**Test Statistic:** Difference in group means
+
+Our p-value was greater than 0.05, which meant we failed to reject the null hypothesis. This means the missingness of the `review` column might depend on the values in the `avg_rating` column. The missingness of recipe reviews might not depend on the average rating of the recipe.
+
+This graph shows the relationship between missingness of the `review` column and the `avg_rating` column:
+<iframe
+  src="C:/Users/zijin/dsc80-2024-sp/food-recipe-analysis/fig_bar.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+The difference between the average rating of those missing and those that have reviews is negligible, which is also reflected in our permutation test.
+
+## Hypothesis Testing
+
+**Null Hypothesis:** There is no difference between the saturated fat content of the top 20 rated recipes and bottom 20 rated recipes. 
+**Alternative Hypothesis:** There IS a difference between the saturated fat content of the top and bottom 20 recipes. 
+
+**Test Statistic:** Difference in means of saturated fat content of both groups.
+**Significance Level:** 0.05 (If p-value < 0.05, we reject the null hypothesis. Otherwise, we fail to reject it.)
+
+We ran a permutation test based on the above. These are good choices because we are trying to determine whether the distribution of the two samples, the saturated fat content of the best-rated 20 recipes and worst-rated 20 recipes, are draws from the same population. Since we want to determine that, we want to use difference in means of saturated fat content of both groups as the test statistic because the saturated fat content is a numeric variable. 
+
+Our p-value was 0.1433, which meant our p-value > 0.05. We failed to reject the null hypothesis. This shows that there could be no difference between the saturated fat content of the top 20 rated recipes and bottom 20 rated recipes.
