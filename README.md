@@ -143,8 +143,7 @@ Our p-value was 0.1433, which meant our p-value > 0.05. We failed to reject the 
 
 We built a pipeline to predict `minutes` using `avg_rating` and `tags`. Our categorical features are `avg_rating` (ordinal) and `tags` (nominal). Our quantitative feature is `minutes`, which we aim to predict. We preprocess the data by one-hot-encoding `tags`. We then fit a linear regression model and evaluate its performance using RMSE.
 
-Our model performs at an RMSE of 2230.65. The RMSE is the square root of the average squared error. The median number of minutes (`minutes`) it takes to make a recipe is 39 mins. An RMSE of 2230.65 indicates that the model's predictions will differ from the actual values by approximately 2230.65 minutes, or ~37.20 hours. This is a rather large difference from the average recipe's cook time, so our model doesn't perform satisfactorily. To improve it for the final model, we plan on transforming existing features and fine-tuning our hyperparameters. 
-
+Our model performs at an RMSE of 8387.3. The RMSE is the square root of the average squared error. The median number of minutes (`minutes`) it takes to make a recipe is 39 mins. An RMSE of 8387.3 indicates that the model's predictions will differ from the actual values by approximately 8387.3 minutes, or ~139.8 hours (~5.8 days). This is a rather large difference from the average recipe's cook time, so our model doesn't perform satisfactorily. To improve it for the final model, we plan on transforming existing features and fine-tuning our hyperparameters. 
 
 ## Final Model
 
@@ -171,5 +170,5 @@ We use 3-fold cross validation because it’s a more reliable estimate of our mo
 - **Test Statistic:** Difference between RMSE of quick recipes and slow recipes.
 - **Significance Level:** 0.05 (If p-value < 0.05, we reject the null hypothesis, meaning our model could be unfair. Otherwise, we fail to reject it, meaning our model could be fair.)
 
-- **p-value:**
-- **Conclusion:** 
+- **p-value:** 1.0
+- **Conclusion:** We fail to reject the null hypothesis because our p-value > 0.05. This means that our model could be fair for both quick recipes which the cooktime is under 30 minutes, as well as slow recipes which the cooktime is over 30 minutes. 
