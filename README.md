@@ -114,7 +114,7 @@ The difference between the average rating of those missing and those that have r
 - **Alternative Hypothesis:** There IS a difference between the saturated fat content of the top and bottom 20 recipes. 
 
 - **Test Statistic:** Difference in means of saturated fat content of both groups.
-- **Significance Level:** 0.05 (If p-value < 0.05, we reject the null hypothesis. Otherwise, we fail to reject it.)
+- **Significance Level:** 0.05 (If p-value < 0.05, we reject the null hypothesis, so there could be a difference between saturated fat content between top 20 and worst 20 recipes. Otherwise, we fail to reject it, so there could be no difference in the distribution of the saturated fat content between the top 20 and worst 20 recipes.)
 
 We ran a permutation test based on the above. These are good choices because we are trying to determine whether the distribution of the two samples, the saturated fat content of the best-rated 20 recipes and worst-rated 20 recipes, are draws from the same population. Since we want to determine that, we want to use difference in means of saturated fat content of both groups as the test statistic because the saturated fat content is a quantitative variable. 
 
@@ -139,3 +139,16 @@ Our model performs at an RMSE of 713.4. The RMSE is the square root of the avera
 ## Final Model
 
 ## Fairness Analysis
+
+- **Group X:** Quick recipes, recipes which `minutes` < 30
+- **Group Y:** Slow recipes, recipes which `minutes` >= 30
+- **Evaluation Metric:** RMSE
+
+- **Null Hypothesis:** Our model is fair. The RMSE for quick recipes and slow recipes are roughly the same, any differences are due to random chance.
+- **Alternative Hypothesis:** Our model is unfair. Its RMSE for quick recipes is lower than its RMSE for slow recipes.
+
+- **Test Statistic:** Difference between RMSE of quick recipes and slow recipes.
+- **Significance Level:** 0.05 (If p-value < 0.05, we reject the null hypothesis, meaning our model could be unfair. Otherwise, we fail to reject it, meaning our model could be fair.)
+
+- **p-value:**
+- **Conclusion:** 
