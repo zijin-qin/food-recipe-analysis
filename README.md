@@ -100,7 +100,7 @@ Our p-value was greater than 0.05, which meant we failed to reject the null hypo
 
 This graph shows the relationship between missingness of the `review` column and the `avg_rating` column:
 <iframe
-  src="graphs/fig_bar.html"
+  src="/graphs/fig_bar.html"
   width="800"
   height="600"
   frameborder="0"
