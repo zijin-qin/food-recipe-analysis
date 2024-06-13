@@ -125,16 +125,16 @@ Our p-value was 0.1433, which meant our p-value > 0.05. We failed to reject the 
 
 ### Problem Identification
 
-- **Our prediction question:** The number of minutes (‘minutes’) it takes to prepare a recipe given the recipe rating ('avg_rating').
+- **Our prediction question:** The number of minutes (`minutes`) it takes to prepare a recipe given the recipe rating (`avg_rating`).
 - **Type of problem:** Regression
-- **Response variable:** We chose the response variable 'minutes' because understanding the correlation between it and the recipe rating can help users plan their time more efficiently.
+- **Response variable:** We chose the response variable `minutes` because understanding the correlation between it and the recipe rating can help users plan their time more efficiently.
 - **Evaluation:** RMSE: RMSE penalizes larger errors more than smaller ones, which is crucial in providing accurate and reliable predictions for recipe preparation times.
 
 ## Baseline Model
 
-We built a pipeline to predict 'minutes' using 'avg_rating' and 'tags'. Our categorical features are 'avg_rating' (ordinal) and 'tags' (nominal). Our quantitative feature is 'minutes', which we aim to predict. We preprocess the data by one-hot-encoding 'tags'. We then fit a linear regression model and evaluate its performance using RMSE and R^2.
+We built a pipeline to predict `minutes` using `avg_rating` and `tags`. Our categorical features are `avg_rating` (ordinal) and `tags` (nominal). Our quantitative feature is `minutes`, which we aim to predict. We preprocess the data by one-hot-encoding `tags`. We then fit a linear regression model and evaluate its performance using RMSE and R^2.
 
-Our model performs at an RMSE of 713.4. The RMSE is the square root of the average squared error. The median number of minutes ('minutes') it takes to make a recipe is 39 mins. An RMSE of 713.4 indicates that the model's predictions will differ from the actual values by approximately 713.4 minutes, or ~11.90 hours. This is a rather large difference from the average recipe's cook time, so our model doesn't perform satisfactorily. To improve it for the final model, we plan on transforming existing features and fine-tuning our hyperparameters. 
+Our model performs at an RMSE of 713.4. The RMSE is the square root of the average squared error. The median number of minutes (`minutes`) it takes to make a recipe is 39 mins. An RMSE of 713.4 indicates that the model's predictions will differ from the actual values by approximately 713.4 minutes, or ~11.90 hours. This is a rather large difference from the average recipe's cook time, so our model doesn't perform satisfactorily. To improve it for the final model, we plan on transforming existing features and fine-tuning our hyperparameters. 
 
 
 ## Final Model
