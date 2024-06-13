@@ -116,6 +116,8 @@ The difference between the average rating of those missing and those that have r
 - **Test Statistic:** Difference in means of saturated fat content of both groups.
 - **Significance Level:** 0.05 (If p-value < 0.05, we reject the null hypothesis, so there could be a difference between saturated fat content between top 20 and worst 20 recipes. Otherwise, we fail to reject it, so there could be no difference in the distribution of the saturated fat content between the top 20 and worst 20 recipes.)
 
+- **p-value:** 0.1433
+
 We ran a permutation test based on the above. These are good choices because we are trying to determine whether the distribution of the two samples, the saturated fat content of the best-rated 20 recipes and worst-rated 20 recipes, are draws from the same population. Since we want to determine that, we want to use difference in means of saturated fat content of both groups as the test statistic because the saturated fat content is a quantitative variable. 
 
 Our p-value was 0.1433, which meant our p-value > 0.05. We failed to reject the null hypothesis. This shows that there could be no difference between the saturated fat content of the top 20 rated recipes and bottom 20 rated recipes.
