@@ -141,9 +141,9 @@ Our p-value was 0.1433, which meant our p-value > 0.05. We failed to reject the 
 
 ## Baseline Model
 
-We built a pipeline to predict `minutes` using `avg_rating` and `tags`. Our categorical features are `avg_rating` (ordinal) and `tags` (nominal). Our quantitative feature is `minutes`, which we aim to predict. We preprocess the data by one-hot-encoding `tags`. We then fit a linear regression model and evaluate its performance using RMSE and R^2.
+We built a pipeline to predict `minutes` using `avg_rating` and `tags`. Our categorical features are `avg_rating` (ordinal) and `tags` (nominal). Our quantitative feature is `minutes`, which we aim to predict. We preprocess the data by one-hot-encoding `tags`. We then fit a linear regression model and evaluate its performance using RMSE.
 
-Our model performs at an RMSE of 713.4. The RMSE is the square root of the average squared error. The median number of minutes (`minutes`) it takes to make a recipe is 39 mins. An RMSE of 713.4 indicates that the model's predictions will differ from the actual values by approximately 713.4 minutes, or ~11.90 hours. This is a rather large difference from the average recipe's cook time, so our model doesn't perform satisfactorily. To improve it for the final model, we plan on transforming existing features and fine-tuning our hyperparameters. 
+Our model performs at an RMSE of 2230.65. The RMSE is the square root of the average squared error. The median number of minutes (`minutes`) it takes to make a recipe is 39 mins. An RMSE of 2230.65 indicates that the model's predictions will differ from the actual values by approximately 2230.65 minutes, or ~37.20 hours. This is a rather large difference from the average recipe's cook time, so our model doesn't perform satisfactorily. To improve it for the final model, we plan on transforming existing features and fine-tuning our hyperparameters. 
 
 
 ## Final Model
@@ -157,7 +157,7 @@ We on-hot encoded `tags`, one of the categorical features. We log_transformed `a
 
 We use 3-fold cross validation because it’s a more reliable estimate of our model’s performance compared to its performance on a single training-testing split in an 80:20 ratio, which is what we did for our baseline model.
 
-RandomizedSearchCV helped us perform hyperparameter turning. This method samples a given number of hyperparameter combinations and evaluates them using cross-validation. 
+`RandomizedSearchCV` helped us perform hyperparameter turning. This method samples a given number of hyperparameter combinations and evaluates them using cross-validation. 
 
 ## Fairness Analysis
 
