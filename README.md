@@ -39,9 +39,9 @@ The first 5 rows of our DataFrame after cleaning, showing only columns relevant 
 Distribution of Saturated Fat of Top 20 Recipes:
 <iframe
   src="graphs/top_fig.html"
-  width=800
-  height=600
-  frameborder=0
+  width="800"
+  height="600"
+  frameborder="0"
 ></iframe>
 
 This histogram shows the distribution of saturated fat content (in percent daily value) of the top 20 recipes. Most have between 20-60% daily value. 
@@ -49,9 +49,9 @@ This histogram shows the distribution of saturated fat content (in percent daily
 Distribution of Saturated Fat of Worst 20 Recipes:
 <iframe
   src="graphs/last_fig.html"
-  width=800
-  height=600
-  frameborder=0
+  width="800"
+  height="600"
+  frameborder="0"
 ></iframe>
 
 The histogram shows the distribution of saturated fat content (in percent daily value) of the worst 20 recipes. While the graph only shows up to 120% daily value, there are recipes with saturated fat content above this threshold, unlike the top 20 recipes. 
@@ -61,9 +61,9 @@ The histogram shows the distribution of saturated fat content (in percent daily 
 Distribution of Saturated Fat vs. Average Rating of All Recipes:
 <iframe
   src="graphs/scatter_fig.html"
-  width=800
-  height=600
-  frameborder=0
+  width="800"
+  height="600"
+  frameborder="0"
 ></iframe>
 
 This scatter plot shows the distribution of saturated fat content (in percent daily value) of all recipes in our dataset. The x-axis shows the saturated fat content, while the y-axis shows the average rating of each recipe. Most recipes have 0-200% daily value of saturated fat, and there is a higher proportion of recipes with 3-5 star ratings. 
@@ -101,9 +101,9 @@ Our p-value was greater than 0.05, which meant we failed to reject the null hypo
 This graph shows the relationship between missingness of the `review` column and the `avg_rating` column:
 <iframe
   src="graphs/fig_bar.html"
-  width=800
-  height=600
-  frameborder=0
+  width="800"
+  height="600"
+  frameborder="0"
 ></iframe>
 
 The difference between the average rating of those missing and those that have reviews is negligible, which is also reflected in our permutation test.
