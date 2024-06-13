@@ -2,8 +2,6 @@
 
 by Bhagya Ram and Zijin Qin
 
----
-
 ## Introduction
 
 Our dataset contains recipes and ratings from [food.com](https://www.food.com). The recipes dataset contains recipes and their nutrition information, and the ratings dataset contains reviews and ratings of the recipes. We are working with a merged dataset of these two datasets, containing 234428 rows by 17 columns.
@@ -13,8 +11,6 @@ Our dataset contains recipes and ratings from [food.com](https://www.food.com). 
 This is important because dietary choices play a significant role in overall health and well-being. We want to explore how the saturated fat content of a recipe influences its rating. Out of these 17 columns, relevant columns to our project are `nutrition`, which contains each recipe's nutrition information, and `rating`, which contains the rating given for each recipe. 
 
 We cleaned the dataset to have individual columns for each nutritonal value such as `saturated fat`, which gives the saturated fat of the recipe in PDV (percentage of daily value). We also calculated the average rating for each recipe and put that in a column named `avg_rating`. Our question analyzes the connection between the average rating of a recipe with its saturated fat content.  
-
----
 
 ## Data Cleaning and Exploratory Data Analysis
 
@@ -97,6 +93,8 @@ The represented data is significant because it shows that the number of reviews 
 ### NMAR Analysis
 
 There are 3 columns with missing values: `name`, `description`, and `review`. Of these 3 columns, the column `description` is not missing at random (NMAR). The missingness of the `description` column depends on the `tags` column, which contains the Food.com tags for the recipe. Recipes of well-known foods with similar tags may be missing descriptions because many people know what food the recipe is about.
+
+---
 
 ### Missingness Dependency
 
