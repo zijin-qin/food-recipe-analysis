@@ -2,15 +2,19 @@
 
 by Bhagya Ram and Zijin Qin
 
+---
+
 ## Introduction
 
-Our dataset contains recipes and ratings from food.com. The recipes dataset contains recipes and their nutrition information, and the ratings dataset contains reviews and ratings of the recipes. We are working with a merged dataset of these two datasets, containing 234428 rows by 17 columns.
+Our dataset contains recipes and ratings from [food.com](https://www.food.com). The recipes dataset contains recipes and their nutrition information, and the ratings dataset contains reviews and ratings of the recipes. We are working with a merged dataset of these two datasets, containing 234428 rows by 17 columns.
 
 **Question:** Does the saturated fat content of the recipe influence its rating?
 
 This is important because dietary choices play a significant role in overall health and well-being. We want to explore how the saturated fat content of a recipe influences its rating. Out of these 17 columns, relevant columns to our project are `nutrition`, which contains each recipe's nutrition information, and `rating`, which contains the rating given for each recipe. 
 
 We cleaned the dataset to have individual columns for each nutritonal value such as `saturated fat`, which gives the saturated fat of the recipe in PDV (percentage of daily value). We also calculated the average rating for each recipe and put that in a column named `avg_rating`. Our question analyzes the connection between the average rating of a recipe with its saturated fat content.  
+
+---
 
 ## Data Cleaning and Exploratory Data Analysis
 
@@ -34,6 +38,8 @@ The first 5 rows of our DataFrame after cleaning, showing only columns relevant 
 | 412 broccoli casserole               |      306168 |        40 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        | since there are already 411 recipes for broccoli casserole posted to "zaar" ,i decided to call this one  #412 broccoli casserole.i don't think there are any like this one in the database. i based this one on the famous "green bean casserole" from campbell's soup. but i think mine is better since i don't like cream of mushroom soup.submitted to "zaar" on may 28th,2008 |      1.19628e+06 | I made this for my son's first birthday party this weekend. Our guests INHALED it! Everyone kept saying how delicious it was. I was I could have gotten to try it.                                                                                                                                                                               |            5 |              36 |
 | 412 broccoli casserole               |      306168 |        40 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        | since there are already 411 recipes for broccoli casserole posted to "zaar" ,i decided to call this one  #412 broccoli casserole.i don't think there are any like this one in the database. i based this one on the famous "green bean casserole" from campbell's soup. but i think mine is better since i don't like cream of mushroom soup.submitted to "zaar" on may 28th,2008 | 768828           | Loved this.  Be sure to completely thaw the broccoli.  I didn&#039;t and it didn&#039;t get done in time specified.  Just cooked it a little longer though and it was perfect.  Thanks Chef.                                                                                                                                                     |            5 |              36 |
 
+---
+
 ### Univariate Analysis
 
 Distribution of Saturated Fat of Top 20 Recipes:
@@ -56,6 +62,8 @@ Distribution of Saturated Fat of Worst 20 Recipes:
 
 The histogram shows the distribution of saturated fat content (in percent daily value) of the worst 20 recipes. While the graph only shows up to 120% daily value, there are recipes with saturated fat content above this threshold, unlike the top 20 recipes. 
 
+---
+
 ### Bivariate Analysis
 
 Distribution of Saturated Fat vs. Average Rating of All Recipes:
@@ -67,6 +75,8 @@ Distribution of Saturated Fat vs. Average Rating of All Recipes:
 ></iframe>
 
 This scatter plot shows the distribution of saturated fat content (in percent daily value) of all recipes in our dataset. The x-axis shows the saturated fat content, while the y-axis shows the average rating of each recipe. Most recipes have 0-200% daily value of saturated fat, and there is a higher proportion of recipes with 3-5 star ratings. 
+
+---
 
 ### Interesting Aggregates
 
