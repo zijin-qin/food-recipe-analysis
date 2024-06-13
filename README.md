@@ -140,6 +140,17 @@ Our model performs at an RMSE of 713.4. The RMSE is the square root of the avera
 
 ## Final Model
 
+We added the following features to the dataset:
+1. avg_rating_squared: This is the square of avg_rating. Squaring a variable can help capture non-linear relationships between the variable and the target. Here, avg_rating is likely to have a non-linear impact on ‘minutes’ because higher ratings might exponentially affect the time needed to prepare a dish. 
+2. log_n_steps: This feature is the natural log of ‘n_steps’. Taking the logarithm of a feature that spans multiple orders of magnitude can stabilize the variance and normalize the distribution. This is useful for features like ‘n_steps’ where the range can be large, and the relationship between ‘n_steps’ and ‘minutes’ might be multiplicative rather than additive.
+3. n_ingredients: Intuitively, recipes with more ingredients might take longer to prepare (greater value in ‘minutes’). Including this feature helps capture the complexity and preparation time associated with the number of ingredients.
+
+We on-hot encoded 'tags', one of the categorical features. We log_transformed 'avg_rating'. Our pipeline uses the StandardScaler and GradientBoostingRegressor. Based on our research, the latter algorithm helps continually build new decision trees on top of each other, each one correcting the previous one's mistakes. 
+
+We use 3-fold cross validation because it’s a more reliable estimate of our model’s performance compared to its performance on a single training-testing split in an 80:20 ratio, which is what we did for our baseline model.
+
+RandomizedSearchCV helped us perform hyperparameter turning. This method samples a given number of hyperparameter combinations and evaluates them using cross-validation. 
+
 ## Fairness Analysis
 
 - **Group X:** Quick recipes, recipes which `minutes` < 30
