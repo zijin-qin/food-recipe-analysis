@@ -39,7 +39,7 @@ The first 5 rows of our DataFrame after cleaning:
 
 Distribution of Saturated Fat of Top 20 Recipes:
 <iframe
-  src="/Users/zijin/dsc80-2024-sp/food-recipe-analysis/top_fig.html"
+  src="C:/Users/zijin/dsc80-2024-sp/food-recipe-analysis/top_fig.html"
   width="800"
   height="600"
   frameborder="0"
@@ -61,7 +61,7 @@ The histogram shows the distribution of saturated fat content (in percent daily 
 
 Distribution of Saturated Fat vs. Average Rating of All Recipes:
 <iframe
-  src="/Users/zijin/dsc80-2024-sp/food-recipe-analysis/scatter_fig.html"
+  src="C:/Users/zijin/dsc80-2024-sp/food-recipe-analysis/scatter_fig.html"
   width="800"
   height="600"
   frameborder="0"
@@ -70,6 +70,18 @@ Distribution of Saturated Fat vs. Average Rating of All Recipes:
 This scatter plot shows the distribution of saturated fat content (in percent daily value) of all recipes in our dataset. The x-axis shows the saturated fat content, while the y-axis shows the average rating of each recipe. Most recipes have 0-200% daily value of saturated fat, and there is a higher proportion of recipes with 3-5 star ratings. 
 
 ### Interesting Aggregates
+
+The aggregated statistics of `review` count and `avg_rating` mean per `user_id`, the contributor of each rating, of 5 users:
+
+|   review |   avg_rating |
+|---------:|-------------:|
+|       79 |      4.34616 |
+|        1 |      5       |
+|        2 |      4.13462 |
+|        2 |      5       |
+|        1 |      5       |
+
+The represented data is significant because it shows that the number of reviews and the average rating may not be correlated. It also shows that there are more active users who leave many reviews, and there are less active users to rarely leave reviews. However, both seem to have similar average ratings of recipes. 
 
 ## Assessment of Missingness
 
@@ -89,7 +101,7 @@ Our p-value was greater than 0.05, which meant we failed to reject the null hypo
 
 This graph shows the relationship between missingness of the `review` column and the `avg_rating` column:
 <iframe
-  src="/Users/zijin/dsc80-2024-sp/food-recipe-analysis/fig_bar.html"
+  src="C:/Users/zijin/dsc80-2024-sp/food-recipe-analysis/fig_bar.html"
   width="800"
   height="600"
   frameborder="0"
@@ -105,6 +117,26 @@ The difference between the average rating of those missing and those that have r
 - **Test Statistic:** Difference in means of saturated fat content of both groups.
 - **Significance Level:** 0.05 (If p-value < 0.05, we reject the null hypothesis. Otherwise, we fail to reject it.)
 
-We ran a permutation test based on the above. These are good choices because we are trying to determine whether the distribution of the two samples, the saturated fat content of the best-rated 20 recipes and worst-rated 20 recipes, are draws from the same population. Since we want to determine that, we want to use difference in means of saturated fat content of both groups as the test statistic because the saturated fat content is a numeric variable. 
+We ran a permutation test based on the above. These are good choices because we are trying to determine whether the distribution of the two samples, the saturated fat content of the best-rated 20 recipes and worst-rated 20 recipes, are draws from the same population. Since we want to determine that, we want to use difference in means of saturated fat content of both groups as the test statistic because the saturated fat content is a quantitative variable. 
 
 Our p-value was 0.1433, which meant our p-value > 0.05. We failed to reject the null hypothesis. This shows that there could be no difference between the saturated fat content of the top 20 rated recipes and bottom 20 rated recipes.
+
+## Framing a Prediction Problem
+
+### Problem Identification
+
+- **Our prediction question:** The number of minutes (‘minutes’) it takes to prepare a recipe given the recipe rating ('avg_rating').
+- **Type of problem:** Regression
+- **Response variable:** We chose the response variable 'minutes' because understanding the correlation between it and the recipe rating can help users plan their time more efficiently.
+- **Evaluation:** RMSE: RMSE penalizes larger errors more than smaller ones, which is crucial in providing accurate and reliable predictions for recipe preparation times.
+
+## Baseline Model
+
+We built a pipeline to predict 'minutes' using 'avg_rating' and 'tags'. Our categorical features are 'avg_rating' (ordinal) and 'tags' (nominal). Our quantitative feature is 'minutes', which we aim to predict. We preprocess the data by one-hot-encoding 'tags'. We then fit a linear regression model and evaluate its performance using RMSE and R^2.
+
+Our model performs at an RMSE of 713.4. The RMSE is the square root of the average squared error. The median number of minutes ('minutes') it takes to make a recipe is 39 mins. An RMSE of 713.4 indicates that the model's predictions will differ from the actual values by approximately 713.4 minutes, or ~11.90 hours. This is a rather large difference from the average recipe's cook time, so our model doesn't perform satisfactorily. To improve it for the final model, we plan on transforming existing features and fine-tuning our hyperparameters. 
+
+
+## Final Model
+
+## Fairness Analysis
