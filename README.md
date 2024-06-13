@@ -38,7 +38,7 @@ The first 5 rows of our DataFrame after cleaning, showing only columns relevant 
 
 Distribution of Saturated Fat of Top 20 Recipes:
 <iframe
-  src="/graphs/top_fig.html"
+  src="graphs/top_fig.html"
   width="800"
   height="600"
   frameborder="0"
@@ -48,7 +48,7 @@ This histogram shows the distribution of saturated fat content (in percent daily
 
 Distribution of Saturated Fat of Worst 20 Recipes:
 <iframe
-  src="/graphs/last_fig.html"
+  src="graphs/last_fig.html"
   width="800"
   height="600"
   frameborder="0"
@@ -60,7 +60,7 @@ The histogram shows the distribution of saturated fat content (in percent daily 
 
 Distribution of Saturated Fat vs. Average Rating of All Recipes:
 <iframe
-  src="/graphs/scatter_fig.html"
+  src="graphs/scatter_fig.html"
   width="800"
   height="600"
   frameborder="0"
